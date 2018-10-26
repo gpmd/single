@@ -10,5 +10,8 @@ func (s *Single) Filename() string {
 	if len(Lockfile) > 0 {
 		return Lockfile
 	}
+	if s.Path != "" {
+		return filepath.Join(s.Path, fmt.Sprintf("%s.lock", s.name))
+	}
 	return filepath.Join("/var/run", fmt.Sprintf("%s.lock", s.name))
 }

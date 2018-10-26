@@ -18,6 +18,7 @@ var (
 // Single represents the name and the open file descriptor
 type Single struct {
 	name string
+	Path string
 	file *os.File
 }
 
